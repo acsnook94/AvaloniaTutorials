@@ -1,0 +1,103 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BasicMvvmSample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="using:BasicMvvmSample.Converter"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:CompileBindings="True"
+        x:Class="BasicMvvmSample.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="BasicMvvmSample">
+    <Window.Resources>
+        <conv:MathAddConverter x:Key="MathAddConverter"></conv:MathAddConverter>
+        <conv:MathMultiConverter x:Key="MathMultiConverter"></conv:MathMultiConverter>
+        <x:Decimal x:Key="MyConverterParameter">2</x:Decimal>
+    </Window.Resources>
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+    
+    <TabControl>
+    <!--     <TabItem Header="Simple ViewModel"> -->
+    <!--         <StackPanel DataContext="{Binding SimpleViewModel}" Spacing="10"> -->
+    <!--                         <TextBlock>Enter your name:</TextBlock> -->
+    <!--                         <TextBox Text="{Binding Name}"/> -->
+    <!--                         <TextBox Text="{Binding Greeting, Mode=OneWay}" -->
+    <!--                                  IsReadOnly="True" -->
+    <!--                                  FontWeight="Bold"></TextBox> -->
+    <!--         </StackPanel> -->
+    <!--     </TabItem> -->
+    <!--      -->
+    <!--     <TabItem Header="Reactive ViewModel"> -->
+    <!--         <StackPanel DataContext="{Binding ReactiveViewModel}" Spacing="10"> -->
+    <!--                         <TextBlock>Enter your name:</TextBlock> -->
+    <!--                         <TextBox Text="{Binding Name}"/> -->
+    <!--                         <TextBox Text="{Binding Greeting, Mode=OneWay}" -->
+    <!--                                  IsReadOnly="True" -->
+    <!--                                  FontWeight="Bold"></TextBox> -->
+    <!--         </StackPanel> -->
+    <!--     </TabItem> -->
+    <!-- </TabControl> -->
+    
+        <TabItem Header="IValueConverter">
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto">
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Number 1"/>
+                <NumericUpDown Grid.Row="0" Grid.Column="1" Value="{Binding Number1}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Sum"/>
+                <NumericUpDown Grid.Row="1" Grid.Column="1"
+                               Value="{Binding Number1, Converter={StaticResource MathAddConverter}, ConverterParameter={StaticResource MyConverterParameter}}">
+                </NumericUpDown>
+            </Grid>
+        </TabItem>
+    
+        <TabItem Header="IMultiValueConverter">
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Operator"/>
+                <ComboBox Grid.Row="0" Grid.Column="1"
+                          ItemsSource="{Binding AvailableMathOperators}"
+                          SelectedItem="{Binding Operator}"></ComboBox>
+                
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Number1"/>
+                <NumericUpDown Grid.Row="1" Grid.Column="1" 
+                               Value="{Binding Number1}"/>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Number2"/>
+                <NumericUpDown Grid.Row="2" Grid.Column="1" 
+                               Value="{Binding Number2}"/>
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Result"/>
+                <NumericUpDown Grid.Row="3" Grid.Column="1" IsReadOnly="True">
+                    <NumericUpDown.Value>
+                        <MultiBinding Converter="{StaticResource MathMultiConverter}" Mode="OneWay">
+                            <Binding Path="Operator"></Binding>
+                            <Binding Path="Number1"></Binding>
+                            <Binding Path="Number2"></Binding>
+                        </MultiBinding>
+                    </NumericUpDown.Value>
+                </NumericUpDown>
+            </Grid>
+        </TabItem>
+        
+        <TabItem Header="FuncValueConverter">
+            <StackPanel Spacing="5">
+                <TextBox PlaceholderText="Type the color to parse (e.g. red, green, blue, #FF112233)">
+                    <TextBox.InnerLeftContent>
+                        <Ellipse Fill="{Binding $parent[TextBox].Text, Converter={x:Static conv:FuncValueConverters.StringToBrushConverter}}"
+                                 Width="20"
+                                 Height="20"
+                                 StrokeThickness="1"
+                                 Margin="2"
+                                 Stroke="Gray"/>
+                    </TextBox.InnerLeftContent>
+                </TextBox>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+    
+</Window>
