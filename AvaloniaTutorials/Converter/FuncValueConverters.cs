@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
 
-namespace BasicMvvmSample.Converter;
+namespace AvaloniaTutorials.Converter;
 
 public static class FuncValueConverters
 {

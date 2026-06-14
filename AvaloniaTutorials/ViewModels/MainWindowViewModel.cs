@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace BasicMvvmSample.ViewModels;
+namespace AvaloniaTutorials.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {

@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace BasicMvvmSample.Converter;
+namespace AvaloniaTutorials.Converter;
 
 //converter to add 2 numbers together
 public class MathAddConverter : IValueConverter

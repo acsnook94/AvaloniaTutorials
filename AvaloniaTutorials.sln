@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMvvmSample", "BasicMvvmSample\BasicMvvmSample.csproj", "{24A8AC4D-643E-43C7-96BF-0BCFA29A5317}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaTutorials", "AvaloniaTutorials\AvaloniaTutorials.csproj", "{24A8AC4D-643E-43C7-96BF-0BCFA29A5317}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@ using System;
 using ReactiveUI;
 // using CommunityToolkit.Mvvm;
 
-namespace BasicMvvmSample.ViewModels;
+namespace AvaloniaTutorials.ViewModels;
 
 public class ReactiveViewModel : ReactiveObject
 {

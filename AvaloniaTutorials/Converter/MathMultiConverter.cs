@@ -5,7 +5,7 @@ using System.Globalization;
 using Avalonia.Data;
 using Avalonia.Data.Converters;
 
-namespace BasicMvvmSample.Converter;
+namespace AvaloniaTutorials.Converter;
 
 public class MathMultiConverter : IMultiValueConverter
 {

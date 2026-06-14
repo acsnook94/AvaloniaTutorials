@@ -4,10 +4,10 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using BasicMvvmSample.ViewModels;
-using BasicMvvmSample.Views;
+using AvaloniaTutorials.ViewModels;
+using AvaloniaTutorials.Views;
 
-namespace BasicMvvmSample;
+namespace AvaloniaTutorials;
 
 public partial class App : Application
 {
