@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaTutorials", "Avalon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandTutorial", "CommandTutorial\CommandTutorial.csproj", "{8840683A-A3F4-4191-B957-6604D5085715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataValidationTutorial", "DataValidationTutorial\DataValidationTutorial.csproj", "{7E01CD8D-7E80-4E1C-AD79-A0C14EF8D08F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{8840683A-A3F4-4191-B957-6604D5085715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8840683A-A3F4-4191-B957-6604D5085715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8840683A-A3F4-4191-B957-6604D5085715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E01CD8D-7E80-4E1C-AD79-A0C14EF8D08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E01CD8D-7E80-4E1C-AD79-A0C14EF8D08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E01CD8D-7E80-4E1C-AD79-A0C14EF8D08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E01CD8D-7E80-4E1C-AD79-A0C14EF8D08F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
