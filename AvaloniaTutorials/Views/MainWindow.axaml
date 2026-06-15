@@ -70,7 +70,7 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Number2"/>
                 <NumericUpDown Grid.Row="2" Grid.Column="1" 
                                Value="{Binding Number2}"/>
-                
+            
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Result"/>
                 <NumericUpDown Grid.Row="3" Grid.Column="1" IsReadOnly="True">
                     <NumericUpDown.Value>
